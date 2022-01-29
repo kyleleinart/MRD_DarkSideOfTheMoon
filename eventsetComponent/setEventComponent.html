@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Set Event Component</title>
+        <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        
+        <!--for event-->
+        <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+        
+    </head>
+    
+    <body>
+        <a-scene>
+        
+        <!-- Assets Management System -->
+            <a-assets>
+                <img id="ground" src="https://cdn.glitch.com/3ba59165-b7ce-4cd6-9d1b-ba3a504e6e0f%2Fbrick-1024.jpg?v=1568894260732">
+            </a-assets>
+        
+            <!--Plane-->
+           <a-plane 
+                 id="plane"
+                 src="#ground" 
+                 scale="50 50 1" 
+                 repeat="5 5 1" 
+                 rotation="-90 0 0"
+                 position="0,-0,-10">
+           </a-plane>
+        
+        
+          <!-- Camera and cursor -->
+		<a-camera>
+			<a-entity cursor position="0 0 -1"
+					  geometry="primitive: sphere; radius: 0.005"
+					  material="color: #000000; shader: flat; opacity: 0.5">
+			</a-entity>
+		</a-camera>
+            
+            
+            <!-- Left Red Box, EVENT: mouseenter,mouseleave,target object, click-->
+		<a-box color="#AA0000" 
+               position="-2 2 -7"
+               event-set__enter="_event:mouseenter; material.color:#4af0ff"
+			   event-set__leave="_event:mouseleave; material.color:#AA0000"
+               event-set__tarcol="_event:click; _target: #plane; material.color:#ab4aff">
+		</a-box>
+            
+        <!-- Green Box EVENT: reset the color-->
+		<a-box id="green" 
+               color="#00AA00" 
+               position="-2 5 -7"
+               event-set__retcol="_event:click; material.color:#00AA00">
+
+		</a-box>
+        
+        <!-- Center Red Box EVENT: set visible/invisible -->
+		<a-box color="#AA0000" 
+               position="0 2 -7"
+               event-set__enter="_event:mouseenter; material.color:#4af0ff"
+			   event-set__leave="_event:mouseleave; material.color:#AA0000"
+               event-set__tarvis="_event:click; _target: #blue; visible:true">
+			 
+		</a-box>
+        
+         <!-- Blue Box -->
+		<a-box id="blue" 
+               color="#0000AA" 
+               position="0 5 -7" 
+               visible="false"
+			   event-set__retvis="_event:click; visible:false">
+		</a-box>
+
+		<!-- Right Red Box EVENT: set position -->
+		<a-box 
+               color="#AA0000" 
+               position="2 2 -7"
+               event-set__enter="_event:mouseenter; material.color:#4af0ff"
+			   event-set__leave="_event:mouseleave; material.color:#AA0000"
+               event-set__setpos="_event:click; _target: #yellow; position: 2 3 -6">
+		</a-box>
+            
+		<!-- Yellow Box -->  
+		<a-box id="yellow" 
+               color="#FFAA00" 
+               position="2 5 -7"
+			   event-set__repos="_event:click; position: 2 5 -7">
+		</a-box> 
+            
+       
+        
+        </a-scene>
+    
+    </body>
+    
+</html>
