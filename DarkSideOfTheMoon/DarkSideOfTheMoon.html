@@ -4,15 +4,12 @@
 <html>
   <head>
     <title>Dark Side Of The Moon Tribute</title>
-    <meta name="description" content="ECS - A-Frame School">
+    <meta name="description" content="Tribute to Dark Side of the Moon">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="script.js"></script>
   </head>
   <body>
     <a-scene dark-side-of-the-moon>
-      <a-assets>
-        <audio id="music" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" preload="auto"></audio>
-      </a-assets>
       <a-camera>
         <a-entity cursor position="0 0 -1"
               geometry="primitive: sphere; radius: 0.005"
@@ -23,7 +20,8 @@
                 id="innerTriangle" 
                 geometry="primitive: triangle;"
                 scale ="1 1 1"
-                position="0 2.5 -2.99"  
+                position="0 2.5 -2.99"
+                sound="src: audio/music.mp3 ; on: click"  
                 material="side: double">
         </a-entity>
         <a-entity 
@@ -33,66 +31,80 @@
                 position="0 2.5 -3" 
                 material="side: double; color: #000000">
         </a-entity>
-        <a-entity 
-                id="box" 
-                geometry="primitive: box; width: 0.5; depth: 0.5; height: 0.5" 
+        <!-- <a-entity 
+                id="sphere" 
+                geometry="primitive: sphere; width: 0.1; depth: 0.1; height: 0.1" 
                 position="0 0.5 -2" 
                 rotation="0 0 0" 
                 sound="src: https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav; on: click"
                 material="color: #4CC3D9">
-        </a-entity>
+        </a-entity> -->
         <a-entity 
                 id="whiteLight" 
-                geometry="primitive: box; width: 5; depth: 0; height: 0.05" 
-                position="-2.5 1.9 -3.01" 
+                geometry="primitive: box; width: 0; depth: 0; height: 0.05" 
+                position="-4.91 1.25 -3.01" 
                 rotation="0 0 15" 
-                material="color: blue">
+                material="color: white"
+                animation__pos="property: position; to: -2.5 1.9 -3.01; dur: 2000; easing: easeInQuad; enabled: false"
+                animation__width="property: geometry.width; to: 5; dur: 2000; easing: easeInQuad; enabled: false">
         </a-entity>
         <a-entity 
                 id="redLight" 
-                geometry="primitive: box; width: 5; depth: 0; height: 0.05" 
-                position="2.5 2 -3.01" 
+                geometry="primitive: box; width: 0; depth: 0; height: 0.05" 
+                position="0.09 2.65 -3.01" 
                 rotation="0 0 -15" 
-                material="color: red">
+                material="color: red"
+                animation__pos="property: position; to: 2.5 2 -3.01; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false"
+                animation__width="property: geometry.width; to: 5; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false">
         </a-entity>
         <a-entity 
                 id="orangeLight" 
-                geometry="primitive: box; width: 5; depth: 0; height: 0.05" 
-                position="2.5 1.95 -3.01" 
+                geometry="primitive: box; width: 0; depth: 0; height: 0.05" 
+                position="0.09 2.6 -3.01"
                 rotation="0 0 -15" 
-                material="color: orange">
+                material="color: orange"
+                animation__pos="property: position; to: 2.5 1.95 -3.01; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false"
+                animation__width="property: geometry.width; to: 5; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false">
         </a-entity>
         <a-entity 
                 id="yellowLight" 
-                geometry="primitive: box; width: 5; depth: 0; height: 0.05" 
-                position="2.5 1.9 -3.01" 
+                geometry="primitive: box; width: 0; depth: 0; height: 0.05" 
+                position="0.09 2.55 -3.01" 
                 rotation="0 0 -15" 
-                material="color: yellow">
+                material="color: yellow"
+                animation__pos="property: position; to: 2.5 1.9 -3.01; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false"
+                animation__width="property: geometry.width; to: 5; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false">
         </a-entity>
         <a-entity 
                 id="greenLight" 
-                geometry="primitive: box; width: 5; depth: 0; height: 0.05" 
-                position="2.5 1.85 -3.01" 
+                geometry="primitive: box; width: 0; depth: 0; height: 0.05" 
+                position="0.09 2.5 -3.01" 
                 rotation="0 0 -15" 
-                material="color: green">
+                material="color: green"
+                animation__pos="property: position; to: 2.5 1.85 -3.01; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false"
+                animation__width="property: geometry.width; to: 5; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false">
         </a-entity>
         <a-entity 
                 id="blueLight" 
-                geometry="primitive: box; width: 5; depth: 0; height: 0.05" 
-                position="2.5 1.8 -3.01" 
+                geometry="primitive: box; width: 0; depth: 0; height: 0.05" 
+                position="0.09 2.45 -3.01"
                 rotation="0 0 -15" 
-                material="color: blue">
+                material="color: blue"
+                animation__pos="property: position; to: 2.5 1.8 -3.01; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false"
+                animation__width="property: geometry.width; to: 5; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false">
         </a-entity>
         <a-entity 
                 id="purpleLight" 
-                geometry="primitive: box; width: 5; depth: 0; height: 0.05" 
-                position="2.5 1.75 -3.01" 
+                geometry="primitive: box; width: 0; depth: 0; height: 0.05" 
+                position="0.09 2.4 -3.01"
                 rotation="0 0 -15" 
-                material="color: purple">
+                material="color: purple"
+                animation__pos="property: position; to: 2.5 1.75 -3.01; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false"
+                animation__width="property: geometry.width; to: 5; dur: 2000; easing: easeOutQuad; delay: 2000; enabled: false">
         </a-entity>
         
       <a-entity id="sky" 
-                geometry="primitive: sphere; radius: 100" material="color: #ECECEC; shader: flat; side: back">
+                geometry="primitive: sphere; radius: 100" material="color: white; shader: flat; side: back">
       </a-entity>
         
         
